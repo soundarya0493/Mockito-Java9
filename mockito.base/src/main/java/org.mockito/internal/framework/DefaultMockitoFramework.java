@@ -12,6 +12,7 @@ import org.mockito.listeners.MockitoListener;
 import org.mockito.plugins.MockitoPlugins;
 
 import static org.mockito.internal.progress.ThreadSafeMockingProgress.mockingProgress;
+import org.mockito.MockitoFramework;
 
 public class DefaultMockitoFramework implements MockitoFramework {
 

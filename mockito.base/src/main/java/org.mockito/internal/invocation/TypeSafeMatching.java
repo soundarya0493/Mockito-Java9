@@ -5,6 +5,8 @@
 package org.mockito.internal.invocation;
 
 import java.lang.reflect.Method;
+import org.mockito.ArgumentMatcher;
+
 
 @SuppressWarnings({"unchecked","rawtypes"})
 public class TypeSafeMatching implements ArgumentMatcherAction {

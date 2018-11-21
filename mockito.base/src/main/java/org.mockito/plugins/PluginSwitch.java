@@ -3,7 +3,7 @@
  * This program is made available under the terms of the MIT License.
  */
 package org.mockito.plugins;
-
+import org.mockito.Incubating;
 /**
  * Allows switching off the plugins that are discovered on classpath.
  *

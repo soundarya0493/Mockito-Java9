@@ -15,6 +15,7 @@ import org.mockito.internal.hamcrest.HamcrestArgumentMatcher;
 import org.mockito.internal.matchers.CapturingMatcher;
 import org.mockito.internal.matchers.VarargMatcher;
 import org.mockito.invocation.Invocation;
+import org.mockito.ArgumentMatcher;
 
 public class MatcherApplicationStrategy {
 

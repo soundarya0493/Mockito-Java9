@@ -49,6 +49,9 @@ import static org.mockito.internal.util.MockUtil.isMock;
 import static org.mockito.internal.util.MockUtil.resetMock;
 import static org.mockito.internal.util.MockUtil.typeMockabilityOf;
 import static org.mockito.internal.verification.VerificationModeFactory.noMoreInteractions;
+import org.mockito.MockSettings;
+import org.mockito.MockingDetails;
+import org.mockito.InOrder;
 
 @SuppressWarnings("unchecked")
 public class MockitoCore {

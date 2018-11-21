@@ -13,6 +13,7 @@ import org.mockito.mock.MockCreationSettings;
 import org.mockito.stubbing.Stubbing;
 
 import java.util.Collection;
+import org.mockito.MockingDetails;
 
 /**
  * Class to inspect any object, and identify whether a particular object is either a mock or a spy.  This is

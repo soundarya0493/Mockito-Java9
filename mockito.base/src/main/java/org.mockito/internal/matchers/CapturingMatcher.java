@@ -5,7 +5,7 @@
 package org.mockito.internal.matchers;
 
 import static org.mockito.internal.exceptions.Reporter.noArgumentValueWasCaptured;
-
+import org.mockito.ArgumentMatcher;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

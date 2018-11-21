@@ -6,6 +6,7 @@ package org.mockito.internal.matchers;
 
 import org.mockito.internal.debugging.LocationImpl;
 import org.mockito.invocation.Location;
+import org.mockito.ArgumentMatcher;
 
 @SuppressWarnings("unchecked")
 public class LocalizedMatcher {

@@ -6,6 +6,7 @@
 package org.mockito.internal.matchers;
 
 import java.io.Serializable;
+import org.mockito.ArgumentMatcher;
 
 public abstract class CompareTo<T extends Comparable<T>> implements ArgumentMatcher<T>, Serializable {
     private final T wanted;

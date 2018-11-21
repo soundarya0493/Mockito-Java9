@@ -15,6 +15,7 @@ import org.mockito.invocation.Invocation;
 import org.mockito.verification.VerificationMode;
 import org.mockito.internal.verification.VerificationWrapper;
 import org.mockito.internal.verification.VerificationWrapperInOrderWrapper;
+import org.mockito.InOrder;
 
 import static org.mockito.internal.exceptions.Reporter.inOrderRequiresFamiliarMock;
 

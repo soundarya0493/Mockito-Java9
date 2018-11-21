@@ -31,6 +31,8 @@ import static org.mockito.internal.exceptions.Reporter.invocationListenersRequir
 import static org.mockito.internal.exceptions.Reporter.methodDoesNotAcceptParameter;
 import static org.mockito.internal.util.collections.Sets.newSet;
 
+import org.mockito.MockSettings;
+
 @SuppressWarnings("unchecked")
 public class MockSettingsImpl<T> extends CreationSettings<T> implements MockSettings, MockCreationSettings<T> {
 

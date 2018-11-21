@@ -3,6 +3,7 @@
  * This program is made available under the terms of the MIT License.
  */
 package org.mockito.internal.hamcrest;
+import org.mockito.ArgumentMatcher;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;

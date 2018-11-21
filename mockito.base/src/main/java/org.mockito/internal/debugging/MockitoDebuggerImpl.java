@@ -7,6 +7,7 @@ package org.mockito.internal.debugging;
 import org.mockito.internal.invocation.UnusedStubsFinder;
 import org.mockito.internal.invocation.finder.AllInvocationsFinder;
 import org.mockito.invocation.Invocation;
+import org.mockito.MockitoDebugger;
 
 import java.util.List;
 

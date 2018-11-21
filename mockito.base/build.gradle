@@ -40,6 +40,54 @@ dependencies{
 
     //testUtil sourceSets.test.output
 }
+
+compileJava{
+    doFirst {
+        options.fork = true
+        // options.forkOptions.javaHome = file('C:/Program Files/Java/jdk-9')
+        options.sourcepath = files(sourceSets.main.java.srcDirs)
+        options.compilerArgs = [
+            '--module-path', classpath.asPath,
+        ]
+        classpath = files()
+    }
+}
+
+/*compileJava.options.fork = true
+compileJava {
+    inputs.property("moduleName", 'mockito.base')
+    doFirst {
+        options.compilerArgs = [
+            '--module-path', classpath.asPath,
+        ]
+        classpath = files()  
+    }
+}
+*/
+compileTestJava {
+    inputs.property("moduleName", 'mockito.base')
+    doFirst {
+        options.compilerArgs = [
+            '--module-path', classpath.asPath,
+            '--add-modules', 'junit',  // <2>
+            '--add-reads', "$moduleName=junit", 
+            '--patch-module', "$moduleName=" + files(sourceSets.test.java.srcDirs).asPath, // <4>
+        ]
+        classpath = files()
+    }
+}
+
+test {
+    inputs.property("moduleName", 'mockito.base')
+    doFirst {
+        jvmArgs = [
+            '--module-path', classpath.asPath, // <1>
+            '--add-modules', 'ALL-MODULE-PATH', // <2>
+            '--add-reads', "$moduleName=junit", // <3>
+            '--patch-module', "$moduleName=" + files(sourceSets.test.java.outputDir).asPath, // <4>
+        ]
+        classpath = files()
+    }
+}
+
 ext.moduleName = 'mockito.base'
-
-

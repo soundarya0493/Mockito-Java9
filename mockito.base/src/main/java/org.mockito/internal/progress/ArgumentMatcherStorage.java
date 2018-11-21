@@ -7,6 +7,8 @@ package org.mockito.internal.progress;
 import org.mockito.internal.matchers.LocalizedMatcher;
 
 import java.util.List;
+import org.mockito.ArgumentMatcher;
+
 
 @SuppressWarnings("unchecked")
 public interface ArgumentMatcherStorage {
