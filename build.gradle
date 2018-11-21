@@ -106,6 +106,14 @@ subprojects {
         if(lib && !lib.artifactId.startsWith("mockito-")) {
             lib.artifactId = "mockito-" + lib.artifactId
         }
+        compileJava {
+            doFirst {
+                options.compilerArgs = [
+                    '--module-path', classpath.asPath,
+                ]
+                classpath = files()
+            }
+        }
     }
 }
 //end workaround

@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'mockito.external'
+version '2.23.3'
+
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation project(":mockito.base")
+}
+
+ext.moduleName = 'mockito.external'
+

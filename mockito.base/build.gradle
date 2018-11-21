@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        mavenLocal() //for local testing of mockito-release-tools
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath 'gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.14.0'
+        classpath 'ru.vyarus:gradle-animalsniffer-plugin:1.4.4' //for 'java-compatibility-check.gradle'
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.15'
+
+        //Using buildscript.classpath so that we can resolve shipkit from maven local, during local testing
+        classpath 'org.shipkit:shipkit:2.0.28'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'mockito.base'
+version '2.23.3'
+
+sourceCompatibility = 1.9
+
+dependencies{
+    compile libraries.bytebuddy, libraries.bytebuddyagent
+
+    compileOnly libraries.junit4, libraries.hamcrest
+    compile libraries.objenesis
+
+    testCompile libraries.asm
+
+    testCompile libraries.assertj
+
+    //putting 'provided' dependencies on test compile and runtime classpath
+    testCompileOnly configurations.compileOnly
+    testRuntime configurations.compileOnly
+
+    //testUtil sourceSets.test.output
+}
+ext.moduleName = 'mockito.base'
+
+
