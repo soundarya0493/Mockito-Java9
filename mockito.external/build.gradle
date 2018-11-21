@@ -6,6 +6,7 @@ group 'mockito.external'
 version '2.23.3'
 
 sourceCompatibility = 1.9
+targetCompatibility = 1.9
 
 repositories {
     mavenCentral()
@@ -14,6 +15,14 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation project(":mockito.base")
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+    }
 }
 
 ext.moduleName = 'mockito.external'

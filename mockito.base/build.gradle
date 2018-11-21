@@ -23,10 +23,10 @@ group 'mockito.base'
 version '2.23.3'
 
 sourceCompatibility = 1.9
+targetCompatibility = 1.9
 
 dependencies{
     compile libraries.bytebuddy, libraries.bytebuddyagent
-
     compileOnly libraries.junit4, libraries.hamcrest
     compile libraries.objenesis
 
@@ -41,6 +41,13 @@ dependencies{
     //testUtil sourceSets.test.output
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+    }
+}
 compileJava{
     doFirst {
         options.fork = true
