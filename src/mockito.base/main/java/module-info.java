@@ -5,6 +5,7 @@ module mockito.base {
     requires java.instrument;
     requires net.bytebuddy;
     requires net.bytebuddy.agent;
+    requires mockito.external;
     exports org.mockito.configuration;
     exports org.mockito.exceptions.base;
     exports org.mockito.exceptions.misusing;

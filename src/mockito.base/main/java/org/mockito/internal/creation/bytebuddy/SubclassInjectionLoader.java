@@ -4,9 +4,9 @@
  */
 package org.mockito.internal.creation.bytebuddy;
 
+import codegen.InjectionBase;
 import net.bytebuddy.dynamic.loading.ClassInjector;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
-import org.mockito.codegen.InjectionBase;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.util.Platform;
 

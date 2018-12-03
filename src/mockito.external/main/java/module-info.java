@@ -1,3 +1,3 @@
 module mockito.external{
-    requires mockito.base;
+    exports codegen;
 }

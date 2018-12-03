@@ -38,7 +38,7 @@ import static org.mockito.internal.util.StringUtil.join;
 
 class SubclassBytecodeGenerator implements BytecodeGenerator {
 
-    private static final String CODEGEN_PACKAGE = "org.mockito.codegen.";
+    private static final String CODEGEN_PACKAGE = "codegen.";
 
     private final SubclassLoader loader;
 

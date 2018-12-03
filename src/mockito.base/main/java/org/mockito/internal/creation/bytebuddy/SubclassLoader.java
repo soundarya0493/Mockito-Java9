@@ -16,7 +16,7 @@ public interface SubclassLoader {
      *
      * @param mockedType  The type being mocked.
      * @param classLoader The class loader being used.
-     * @param codegen     {@code true} if the mock is loaded in the {@code org.mockito.codegen} package.
+     * @param codegen     {@code true} if the mock is loaded in the {@code codegen} package.
      * @return An appropriate class loading strategy.
      */
     ClassLoadingStrategy<ClassLoader> resolveStrategy(Class<?> mockedType, ClassLoader classLoader, boolean codegen);

@@ -61,7 +61,7 @@ public class ConstructorInstantiator implements Instantiator {
     }
 
     @SuppressWarnings("unchecked")
-    private static <T> T invokeConstructor(Constructor<?> constructor, Object... params) throws java.lang.InstantiationException, IllegalAccessException, InvocationTargetException {
+    private static <T> T invokeConstructor(Constructor<?> constructor, Object... params) throws InstantiationException, IllegalAccessException, InvocationTargetException, java.lang.InstantiationException {
         AccessibilityChanger accessibility = new AccessibilityChanger();
         accessibility.enableAccess(constructor);
         return (T) constructor.newInstance(params);
