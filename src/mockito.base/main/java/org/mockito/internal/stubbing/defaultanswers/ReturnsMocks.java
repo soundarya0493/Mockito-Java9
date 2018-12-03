@@ -26,7 +26,7 @@ public class ReturnsMocks implements Answer<Object>, Serializable {
         return returnValueFor(invocation.getMethod().getReturnType());
     }
 
-    Object returnValueFor(Class<?> clazz) {
+    Object returnValueFor(Class<?> clazz) throws InstantiationException {
         if (!mockitoCore.isTypeMockable(clazz)) {
             return null;
         }

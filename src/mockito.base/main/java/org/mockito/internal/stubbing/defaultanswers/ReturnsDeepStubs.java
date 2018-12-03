@@ -91,7 +91,7 @@ public class ReturnsDeepStubs implements Answer<Object>, Serializable {
      * @param parentMock The parent of the current deep stub mock.
      * @return The mock
      */
-    private Object newDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata, Object parentMock) {
+    private Object newDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata, Object parentMock) throws InstantiationException {
         MockCreationSettings parentMockSettings = MockUtil.getMockSettings(parentMock);
         return mockitoCore().mock(
                 returnTypeGenericMetadata.rawType(),

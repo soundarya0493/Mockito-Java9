@@ -61,7 +61,7 @@ public class DefaultMockitoSessionBuilder implements MockitoSessionBuilder {
     }
 
     @Override
-    public MockitoSession startMocking() {
+    public MockitoSession startMocking() throws InstantiationException {
         //Configure default values
         List<Object> effectiveTestClassInstances;
         String effectiveName;

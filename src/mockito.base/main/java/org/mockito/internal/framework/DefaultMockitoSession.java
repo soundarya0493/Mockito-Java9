@@ -21,7 +21,7 @@ public class DefaultMockitoSession implements MockitoSession {
     private final String name;
     private final UniversalTestListener listener;
 
-    public DefaultMockitoSession(List<Object> testClassInstances, String name, Strictness strictness, MockitoLogger logger) {
+    public DefaultMockitoSession(List<Object> testClassInstances, String name, Strictness strictness, MockitoLogger logger) throws InstantiationException {
         this.name = name;
         listener = new UniversalTestListener(strictness, logger);
         try {

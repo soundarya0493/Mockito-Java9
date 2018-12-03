@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.mockito.MockitoAnnotations;
 import org.mockito.internal.configuration.injection.scanner.InjectMocksScanner;
 import org.mockito.internal.configuration.injection.scanner.MockScanner;
 import org.mockito.plugins.AnnotationEngine;
@@ -37,7 +38,7 @@ public class InjectingAnnotationEngine implements AnnotationEngine, org.mockito.
      *
      * @see AnnotationEngine#process(Class, Object)
      */
-    public void process(Class<?> clazz, Object testInstance) {
+    public void process(Class<?> clazz, Object testInstance) throws InstantiationException {
         processIndependentAnnotations(testInstance.getClass(), testInstance);
         processInjectMocks(testInstance.getClass(), testInstance);
     }
@@ -50,7 +51,7 @@ public class InjectingAnnotationEngine implements AnnotationEngine, org.mockito.
         }
     }
 
-    private void processIndependentAnnotations(final Class<?> clazz, final Object testInstance) {
+    private void processIndependentAnnotations(final Class<?> clazz, final Object testInstance) throws InstantiationException {
         Class<?> classContext = clazz;
         while (classContext != Object.class) {
             //this will create @Mocks, @Captors, etc:

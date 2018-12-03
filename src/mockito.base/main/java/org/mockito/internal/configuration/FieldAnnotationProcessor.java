@@ -11,5 +11,5 @@ import java.lang.reflect.Field;
  * Simple annotation processor interface.
  */
 public interface FieldAnnotationProcessor<A extends Annotation> {
-    Object process(A annotation, Field field);
+    Object process(A annotation, Field field) throws InstantiationException;
 }

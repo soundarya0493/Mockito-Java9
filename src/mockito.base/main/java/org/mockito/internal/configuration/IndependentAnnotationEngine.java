@@ -35,7 +35,7 @@ public class IndependentAnnotationEngine implements AnnotationEngine, org.mockit
         registerAnnotationProcessor(Captor.class, new CaptorAnnotationProcessor());
     }
 
-    private Object createMockFor(Annotation annotation, Field field) {
+    private Object createMockFor(Annotation annotation, Field field) throws InstantiationException {
         return forAnnotation(annotation).process(annotation, field);
     }
 
@@ -55,7 +55,7 @@ public class IndependentAnnotationEngine implements AnnotationEngine, org.mockit
     }
 
     @Override
-    public void process(Class<?> clazz, Object testInstance) {
+    public void process(Class<?> clazz, Object testInstance) throws InstantiationException {
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
             boolean alreadyAssigned = false;

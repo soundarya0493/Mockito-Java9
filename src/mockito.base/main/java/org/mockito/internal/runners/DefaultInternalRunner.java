@@ -36,7 +36,11 @@ public class DefaultInternalRunner implements InternalRunner {
                 mockitoTestListener = listenerSupplier.get();
                 Mockito.framework().addListener(mockitoTestListener);
                 // init annotated mocks before tests
-                MockitoAnnotations.initMocks(target);
+                try {
+                    MockitoAnnotations.initMocks(target);
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                }
                 return super.withBefores(method, target, statement);
             }
 

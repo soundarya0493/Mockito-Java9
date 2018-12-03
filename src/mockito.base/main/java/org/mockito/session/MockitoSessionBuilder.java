@@ -127,5 +127,5 @@ public interface MockitoSessionBuilder {
      * @throws UnfinishedMockingSessionException
      *  when previous session was not concluded with {@link MockitoSession#finishMocking()}
      */
-    MockitoSession startMocking() throws UnfinishedMockingSessionException;
+    MockitoSession startMocking() throws UnfinishedMockingSessionException, InstantiationException;
 }

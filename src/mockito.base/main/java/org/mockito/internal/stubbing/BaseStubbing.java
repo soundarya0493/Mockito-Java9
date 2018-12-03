@@ -60,7 +60,7 @@ public abstract class BaseStubbing<T> implements OngoingStubbing<T> {
             mockingProgress().reset();
             throw notAnException();
         }
-        return thenThrow((Class<? extends Throwable>) newInstance(throwableType));
+        return thenThrow(newInstance(throwableType));
     }
 
     @Override

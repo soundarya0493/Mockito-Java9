@@ -25,5 +25,5 @@ public interface AnnotationEngine {
      * @param clazz Class where to extract field information, check implementation for details
      * @param testInstance Test instance
      */
-    void process(Class<?> clazz, Object testInstance);
+    void process(Class<?> clazz, Object testInstance) throws InstantiationException;
 }

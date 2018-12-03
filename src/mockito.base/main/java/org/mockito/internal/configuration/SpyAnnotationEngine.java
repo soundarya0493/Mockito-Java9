@@ -67,7 +67,7 @@ public class SpyAnnotationEngine implements AnnotationEngine, org.mockito.config
         }
     }
 
-    private static Object spyInstance(Field field, Object instance) {
+    private static Object spyInstance(Field field, Object instance) throws InstantiationException {
         return Mockito.mock(instance.getClass(),
                             withSettings().spiedInstance(instance)
                                                            .defaultAnswer(CALLS_REAL_METHODS)

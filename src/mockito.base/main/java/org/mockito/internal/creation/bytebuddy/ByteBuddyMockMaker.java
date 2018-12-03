@@ -20,7 +20,7 @@ public class ByteBuddyMockMaker implements ClassCreatingMockMaker {
     private ClassCreatingMockMaker defaultByteBuddyMockMaker = new SubclassByteBuddyMockMaker();
 
     @Override
-    public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) {
+    public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) throws InstantiationException {
         return defaultByteBuddyMockMaker.createMock(settings, handler);
     }
 

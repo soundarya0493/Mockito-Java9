@@ -60,7 +60,7 @@ public class MockitoAnnotations {
      * <p>
      * See examples in javadoc for {@link MockitoAnnotations} class.
      */
-    public static void initMocks(Object testClass) {
+    public static void initMocks(Object testClass) throws InstantiationException {
         if (testClass == null) {
             throw new MockitoException("testClass cannot be null. For info how to use @Mock annotations see examples in javadoc for MockitoAnnotations class");
         }

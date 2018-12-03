@@ -38,7 +38,7 @@ public class SubclassByteBuddyMockMaker implements ClassCreatingMockMaker {
     }
 
     @Override
-    public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) {
+    public <T> T createMock(MockCreationSettings<T> settings, MockHandler handler) throws InstantiationException {
         Class<? extends T> mockedProxyType = createMockType(settings);
 
         Instantiator instantiator = Plugins.getInstantiatorProvider().getInstantiator(settings);

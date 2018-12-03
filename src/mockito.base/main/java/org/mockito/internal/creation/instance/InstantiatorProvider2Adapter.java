@@ -26,7 +26,7 @@ public class InstantiatorProvider2Adapter implements InstantiatorProvider {
                 try {
                     return provider.getInstantiator(settings).newInstance(cls);
                 } catch (org.mockito.creation.instance.InstantiationException e) {
-                    throw new java.lang.InstantiationException(e.getMessage(), e.getCause());
+                    throw new InstantiationException(e.getMessage(), e.getCause());
                 }
             }
         };

@@ -14,11 +14,11 @@ import org.mockito.Mockito;
  */
 public class MockAnnotationProcessor implements FieldAnnotationProcessor<Mock> {
     @Override
-    public Object process(Mock annotation, Field field) {
+    public Object process(Mock annotation, Field field) throws InstantiationException {
         return processAnnotationForMock(annotation, field.getType(), field.getName());
     }
 
-    public static Object processAnnotationForMock(Mock annotation, Class<?> type, String name) {
+    public static Object processAnnotationForMock(Mock annotation, Class<?> type, String name) throws InstantiationException {
         MockSettings mockSettings = Mockito.withSettings();
         if (annotation.extraInterfaces().length > 0) { // never null
             mockSettings.extraInterfaces(annotation.extraInterfaces());

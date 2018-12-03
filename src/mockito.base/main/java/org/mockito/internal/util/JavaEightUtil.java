@@ -4,7 +4,9 @@
  */
 package org.mockito.internal.util;
 
+
 import java.lang.reflect.Method;
+import org.mockito.creation.instance.InstantiationException;
 
 /**
  * Helper class to work with features that were introduced in Java versions after 1.5.

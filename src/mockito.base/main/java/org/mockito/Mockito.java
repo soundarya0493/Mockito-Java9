@@ -1800,7 +1800,7 @@ public class Mockito extends ArgumentMatchers {
      * @param classToMock class or interface to mock
      * @return mock object
      */
-    public static <T> T mock(Class<T> classToMock) {
+    public static <T> T mock(Class<T> classToMock) throws InstantiationException {
         return mock(classToMock, withSettings());
     }
 
@@ -1819,7 +1819,7 @@ public class Mockito extends ArgumentMatchers {
      * @param name of the mock
      * @return mock object
      */
-    public static <T> T mock(Class<T> classToMock, String name) {
+    public static <T> T mock(Class<T> classToMock, String name) throws InstantiationException {
         return mock(classToMock, withSettings()
                 .name(name)
                 .defaultAnswer(RETURNS_DEFAULTS));
@@ -1860,7 +1860,7 @@ public class Mockito extends ArgumentMatchers {
      *
      * @return mock object
      */
-    public static <T> T mock(Class<T> classToMock, Answer defaultAnswer) {
+    public static <T> T mock(Class<T> classToMock, Answer defaultAnswer) throws InstantiationException {
         return mock(classToMock, withSettings().defaultAnswer(defaultAnswer));
     }
 
@@ -1887,7 +1887,7 @@ public class Mockito extends ArgumentMatchers {
      * @param mockSettings additional mock settings
      * @return mock object
      */
-    public static <T> T mock(Class<T> classToMock, MockSettings mockSettings) {
+    public static <T> T mock(Class<T> classToMock, MockSettings mockSettings) throws InstantiationException {
         return MOCKITO_CORE.mock(classToMock, mockSettings);
     }
 
@@ -1970,7 +1970,7 @@ public class Mockito extends ArgumentMatchers {
      *            to spy on
      * @return a spy of the real object
      */
-    public static <T> T spy(T object) {
+    public static <T> T spy(T object) throws InstantiationException {
         return MOCKITO_CORE.mock((Class<T>) object.getClass(), withSettings()
                 .spiedInstance(object)
                 .defaultAnswer(CALLS_REAL_METHODS));
@@ -2003,7 +2003,7 @@ public class Mockito extends ArgumentMatchers {
      * @return a spy of the provided class
      * @since 1.10.12
      */
-    public static <T> T spy(Class<T> classToSpy) {
+    public static <T> T spy(Class<T> classToSpy) throws InstantiationException {
         return MOCKITO_CORE.mock(classToSpy, withSettings()
                 .useConstructor()
                 .defaultAnswer(CALLS_REAL_METHODS));

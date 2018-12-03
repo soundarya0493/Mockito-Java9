@@ -67,8 +67,8 @@ public class ConstructorInstantiator implements Instantiator {
         return (T) constructor.newInstance(params);
     }
 
-    private java.lang.InstantiationException paramsException(Class<?> cls, Exception e) {
-        return new java.lang.InstantiationException(join(
+    private InstantiationException paramsException(Class<?> cls, Exception e) {
+        return new InstantiationException(join(
                 "Unable to create instance of '" + cls.getSimpleName() + "'.",
                 "Please ensure the target class has " + constructorArgsString() + " and executes cleanly.")
                 , e);
@@ -86,13 +86,13 @@ public class ConstructorInstantiator implements Instantiator {
         return Arrays.toString(constructorArgTypes);
     }
 
-    private java.lang.InstantiationException noMatchingConstructor(Class<?> cls) {
+    private InstantiationException noMatchingConstructor(Class<?> cls) {
         String constructorString = constructorArgsString();
         String outerInstanceHint = "";
         if (hasOuterClassInstance) {
             outerInstanceHint = " and provided outer instance is correct";
         }
-        return new java.lang.InstantiationException(join("Unable to create instance of '" + cls.getSimpleName() + "'.",
+        return new InstantiationException(join("Unable to create instance of '" + cls.getSimpleName() + "'.",
                 "Please ensure that the target class has " + constructorString + outerInstanceHint + ".")
                 , null);
     }
@@ -107,8 +107,8 @@ public class ConstructorInstantiator implements Instantiator {
         return constructorString;
     }
 
-    private java.lang.InstantiationException multipleMatchingConstructors(Class<?> cls, List<Constructor<?>> constructors) {
-        return new java.lang.InstantiationException(join("Unable to create instance of '" + cls.getSimpleName() + "'.",
+    private InstantiationException multipleMatchingConstructors(Class<?> cls, List<Constructor<?>> constructors) {
+        return new InstantiationException(join("Unable to create instance of '" + cls.getSimpleName() + "'.",
                 "Multiple constructors could be matched to arguments of types " + constructorArgTypes() + ":",
                 join("", " - ", constructors),
                 "If you believe that Mockito could do a better job deciding on which constructor to use, please let us know.",

@@ -60,7 +60,7 @@ public class MockitoCore {
         return typeMockabilityOf(typeToMock).mockable();
     }
 
-    public <T> T mock(Class<T> typeToMock, MockSettings settings) {
+    public <T> T mock(Class<T> typeToMock, MockSettings settings) throws InstantiationException {
         if (!MockSettingsImpl.class.isInstance(settings)) {
             throw new IllegalArgumentException("Unexpected implementation of '" + settings.getClass().getCanonicalName() + "'\n" + "At the moment, you cannot provide your own implementations of that class.");
         }
