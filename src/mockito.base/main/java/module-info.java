@@ -6,6 +6,25 @@ module mockito.base {
     requires net.bytebuddy;
     requires net.bytebuddy.agent;
     requires mockito.external;
+    exports org.mockito.internal.util to mockito.test;
+    exports org.mockito.internal.verification to mockito.test;
+    exports org.mockito.internal.matchers to mockito.test;
+    exports org.mockito.internal.stubbing.answers to mockito.test;
+    exports org.mockito.internal.listeners to mockito.test;
+    exports org.mockito.internal.debugging to mockito.test;
+    exports org.mockito.internal.invocation to mockito.test;
+    exports org.mockito.internal.invocation.mockref to mockito.test;
+    exports org.mockito.internal to mockito.test;
+    exports org.mockito.internal.runners to mockito.test;
+    exports org.mockito.internal.matchers.text to mockito.test;
+    exports org.mockito.internal.exceptions.stacktrace to mockito.test;
+    exports org.mockito.internal.configuration.injection to mockito.test;
+    exports org.mockito.internal.configuration to mockito.test;
+    exports org.mockito.internal.creation to mockito.test;
+    exports org.mockito.internal.handler to mockito.test;
+    exports org.mockito.internal.progress to mockito.test;
+    exports org.mockito.internal.framework to mockito.test;
+    exports org.mockito;
     exports org.mockito.configuration;
     exports org.mockito.exceptions.base;
     exports org.mockito.exceptions.misusing;
@@ -22,4 +41,6 @@ module mockito.base {
     exports org.mockito.runners;
     exports org.mockito.stubbing;
     exports org.mockito.verification;
+    exports org.mockito.exceptions.verification.junit;
+
 }
