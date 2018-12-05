@@ -1,0 +1,20 @@
+rootProject.name = 'mockito'
+
+rootProject.children.each { project ->
+    String projectDirName = "subprojects/$project.name"
+    project.projectDir = new File(settingsDir, projectDirName)
+    project.buildFileName = "${project.name}.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.isFile()
+}
+
+//enableFeaturePreview('STABLE_PUBLISHING')
+
+buildCache {
+    local {
+        enabled = !System.getenv().containsKey("CI")
+    }
+}
+include 'base'
+include 'external'
+
